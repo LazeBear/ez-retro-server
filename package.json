@@ -1,0 +1,69 @@
+{
+  "name": "ez-retro-server",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Mason Xiong",
+    "email": "mason.xiong@yahoo.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^12.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run jest",
+    "lint": "eslint src/. test/. --config .eslintrc.json --fix",
+    "dev": "nodemon src/",
+    "start": "pm2 start src/ -i 0 --name EZ-Retro --time",
+    "stop": "pm2 stop EZ-Retro",
+    "poststart": "pm2 log EZ-Retro",
+    "jest": "jest  --forceExit"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": []
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^4.5.8",
+    "@feathersjs/authentication-local": "^4.5.8",
+    "@feathersjs/authentication-oauth": "^4.5.8",
+    "@feathersjs/configuration": "^4.5.8",
+    "@feathersjs/errors": "^4.5.8",
+    "@feathersjs/express": "^4.5.8",
+    "@feathersjs/feathers": "^4.5.8",
+    "@feathersjs/socketio": "^4.5.8",
+    "@feathersjs/transport-commons": "^4.5.8",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "feathers-authentication-hooks": "^1.0.2",
+    "feathers-mongoose": "^8.3.1",
+    "feathers-shallow-populate": "^2.1.0",
+    "helmet": "^3.23.3",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^5.10.7",
+    "pm2": "^4.5.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "axios": "^0.20.0",
+    "eslint": "^7.10.0",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4"
+  }
+}

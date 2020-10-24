@@ -1,0 +1,7 @@
+{
+  "port": "PORT",
+  "mongodb": "DB_URL",
+  "authentication": {
+    "secret": "JWT_SECRET"
+  }
+}
