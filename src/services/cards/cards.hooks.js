@@ -13,17 +13,46 @@ const options = {
 module.exports = {
   before: {
     all: [authenticate('jwt')],
-    find: [],
+    find: [
+      (context) => {
+        // boardId must exist when find cards
+        const {
+          params: {
+            query: { boardId },
+          },
+        } = context;
+        if (!boardId) {
+          throw new Error('Board Id must exist when find cards');
+        }
+        return context;
+      },
+    ],
     get: [],
     create: [
       (context) => {
+        // user id should always exist because the authenticate in all hook
         context.data.userId = context.params.user._id;
         return context;
       },
     ],
     update: [],
     patch: [],
-    remove: [],
+    // allow multi remove
+    remove: [
+      (context) => {
+        // boardId must exist when remove cards
+        const {
+          params: {
+            query: { boardId },
+          },
+          id,
+        } = context;
+        if (!boardId && !id) {
+          throw new Error('Card Id or Board Id must exist when delete cards');
+        }
+        return context;
+      },
+    ],
   },
 
   after: {
