@@ -27,7 +27,7 @@
     "test": "npm run lint && npm run jest",
     "lint": "eslint src/. test/. --config .eslintrc.json --fix",
     "dev": "nodemon src/",
-    "start": "pm2 start src/ -i 0 --name EZ-Retro --time",
+    "start": "pm2 start src/ -i 1 --name EZ-Retro --time",
     "stop": "pm2 stop EZ-Retro",
     "poststart": "pm2 log EZ-Retro",
     "jest": "jest  --forceExit"
