@@ -13,6 +13,7 @@ module.exports = function (app) {
       ownerId: { type: Schema.Types.ObjectId, ref: 'users' },
       allowVote: { type: Boolean, default: true },
       blurCard: { type: Boolean, default: true },
+      authorOnly: { type: Boolean, default: true },
       lastOpened: { type: Date, default: Date.now() }, // not used atm
       maxVote: { type: Number, default: 5 },
     },
