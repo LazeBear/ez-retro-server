@@ -1,6 +1,6 @@
 # ez-retro-server
 
-> 
+>
 
 ## About
 
@@ -13,33 +13,31 @@ Getting up and running is as easy as 1, 2, 3.
 1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 2. Install your dependencies
 
-    ```
-    cd path/to/ez-retro-server
-    npm install
-    ```
+   ```
+   cd path/to/ez-retro-server
+   npm install
+   ```
 
 3. Start your app
 
+   ```
+   npm start
+   ```
+
+## develop
+
     ```
-    npm start
+    npm run dev
     ```
+
+## deploy
+
+setup these values in the environment variable
+1.PORT: {port to listen on}
+2.DB_URL: {mongodb database url}
+3.NODE_ENV: production
+4.JWT_SECRET: {token secret}
 
 ## Testing
 
 Simply run `npm test` and all your tests in the `test/` directory will be run.
-
-## Scaffolding
-
-Feathers has a powerful command line interface. Here are a few things it can do:
-
-```
-$ npm install -g @feathersjs/cli          # Install Feathers CLI
-
-$ feathers generate service               # Generate a new Service
-$ feathers generate hook                  # Generate a new Hook
-$ feathers help                           # Show all commands
-```
-
-## Help
-
-For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
