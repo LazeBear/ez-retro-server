@@ -16,7 +16,7 @@ module.exports = function (app) {
       authorOnly: { type: Boolean, default: true },
       lastOpened: { type: Date, default: Date.now() }, // not used atm
       maxVote: { type: Number, default: 5 },
-      countDown: { type: Number },
+      countDown: { type: Number, default: 0 },
     },
     {
       timestamps: true,
